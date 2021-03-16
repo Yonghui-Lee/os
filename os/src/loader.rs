@@ -85,3 +85,9 @@ pub fn init_app_cx(app_id: usize) -> &'static TaskContext {
         TaskContext::goto_restore(),
     )
 }
+
+pub fn get_user_info(app_id: usize) -> (usize, usize, usize) {
+    (get_base_i(app_id),
+        get_base_i(app_id+1),
+        USER_STACK[app_id].get_sp())
+}

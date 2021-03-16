@@ -3,7 +3,7 @@ use std::fs::{File, read_dir};
 
 fn main() {
     // println!("cargo:rerun-if-changed=../user/src/");
-    println!("cargo:rerun-if-changed={}", TARGET_PATH);
+    // println!("cargo:rerun-if-changed={}", TARGET_PATH);
     insert_app_data().unwrap();
 }
 
@@ -35,7 +35,7 @@ _num_app:
     writeln!(f, r#"    .quad app_{}_end"#, apps.len() - 1)?;
 
     for (idx, app) in apps.iter().enumerate() {
-        println!("app_{}: {}", idx, app);
+        // println!("app_{}: {}", idx, app);
         writeln!(f, r#"
     .section .data
     .global app_{0}_start
